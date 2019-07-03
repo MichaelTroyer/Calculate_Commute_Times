@@ -27,8 +27,10 @@ def get_commute_data(origin, destination, api_key):
     gmaps = googlemaps.Client(key=api_key)
     now = datetime.now()
 
-    best_case = gmaps.directions(origin, destination, mode='driving', traffic_model='optimistic', departure_time=now)[0]
-    worst_case = gmaps.directions(origin, destination, mode='driving', traffic_model='pessimistic', departure_time=now)[0]
+    best_case = gmaps.directions(
+            origin, destination, mode='driving', traffic_model='optimistic', departure_time=now)[0]
+    worst_case = gmaps.directions(
+            origin, destination, mode='driving', traffic_model='pessimistic', departure_time=now)[0]
 
     commute_data = {
         'Datetime'   : now,

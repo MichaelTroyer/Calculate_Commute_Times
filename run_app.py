@@ -4,11 +4,11 @@ Created on Sat June 29th 21:49 2019
 @author: michael
 """
 
-import os
+import datetime
+import time
 
 from commute_handler import get_commute_data
 from database_handler import Database
-from report_handler import get_data
 
 
 
@@ -25,18 +25,25 @@ def main(origins, destinations, api_key, database):
 
 if __name__ == '__main__':
 
-    HOME = 'home...'
-    WORK = 'work...'
+    HOME = '<home..>'
+    WORK = '<work..>'
 
-    API_KEY = 'api_key..'
-    DATABASE = Database('database.db')
+    API_KEY = '<api_key..>'
+    DATABASE = Database(r'<database..>')
 
-    main(
-        origins=[HOME, WORK],
-        destinations=[WORK, HOME],
-        api_key=API_KEY,
-        database=DATABASE,
-    )
+    while True:
+        try:
+            main(
+                origins=[HOME, WORK],
+                destinations=[WORK, HOME],
+                api_key=API_KEY,
+                database=DATABASE,
+            )
+            print('Getting commute data: [{}]'.format(datetime.datetime.now()))
+        except Exception as e:
+            print('Could not get data: [{}]'.format(datetime.datetime.now()), e)
+        finally:
+            time.sleep(1800)
 
-    print(get_data(DATABASE))
+    
         
