@@ -12,7 +12,7 @@ Stores to the database:
 * Warnings (any accidents, construction zones, speed traps, etc..)
 
 
-The Google Maps API allows for calculating hypothetical future commutes (specific times of day), but does not account for real-time events like accidents. Schedule this script with cron (Linux) or task scheduler (Windows) to pull the real-time data and store to a database to get a more realistic assesment of a typical commute.
+The Google Maps API allows for calculating hypothetical future commutes (specific times of day), but does not account for real-time events like accidents. Schedule this script with cron (Linux) or task scheduler (Windows), or just use time.sleep() in a while loop to pull the real-time data and store to a database to get a more realistic assesment of a typical commute.
 
 
 
