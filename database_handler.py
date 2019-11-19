@@ -2,6 +2,8 @@
 """
 Created on Sat June 29th 21:49 2019
 @author: michael
+
+This code is made available under the Creative Commons Zero 1.0 License (https://creativecommons.org/publicdomain/zero/1.0)
 """
 
 
