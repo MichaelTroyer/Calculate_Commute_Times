@@ -84,3 +84,11 @@ def main(database, start_date=None, end_date=None, specific_route=None):
     name = 'From: {}\nTo: {}'.format(*specific_route)
     plot_data(data, route_name=name)
     
+    
+if __name__ == '__main__':
+    HOME = '<home..>'
+    WORK = '<work..>'
+
+    DATABASE = Database(r'<database..>')
+    
+    main(DATABASE, specific_route=(HOME, WORK))
